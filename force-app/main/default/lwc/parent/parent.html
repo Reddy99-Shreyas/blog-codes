@@ -1,0 +1,29 @@
+<!-- Child to Parent Communication -->
+<!-- <template>
+    <lightning-card variant="compact">
+        <div slot="title">
+            Parent Component, counter value : {counter}
+        </div>
+
+        <div>
+            <c-child onincrement={handleIncrementFromChild}></c-child>
+        </div>
+    </lightning-card>
+</template> -->
+
+
+<!-- Parent to child Communication -->
+<template>
+    <div class="app slds-p-around_x-large">
+        <h2 class="slds-text-heading_large">Send data to child using public property</h2>
+
+        <lightning-input
+            label="Message"
+            value={messageToChild}
+            onchange={handleChange}
+        ></lightning-input>
+
+        <c-child message-from-parent={messageToChild}></c-child>
+
+    </div>
+</template>

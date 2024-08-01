@@ -1,0 +1,50 @@
+<template>
+  <lightning-card title="Server side Pagination" icon-name="standard:account">
+    <template if:true={showLoading}>
+      <lightning-spinner
+        alternative-text="Loading"
+        size="medium"
+        class="spinnerClass"
+      >
+      </lightning-spinner>
+    </template>
+    <div class="slds-m-around_medium">
+      <lightning-datatable
+        key-field="id"
+        hide-checkbox-column="true"
+        show-row-number-column="true"
+        data={accounts}
+        columns={columns}
+      >
+      </lightning-datatable>
+    </div>
+    <lightning-layout class="slds-p-around_small">
+      <div class="slds-align_absolute-center">
+        <lightning-layout-item>
+          <lightning-button
+            label="Previous"
+            icon-name="utility:chevronleft"
+            data-type="previous"
+            onclick={previousHandler}
+            disabled={disablePrevious}
+          >
+          </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item
+          flexibility="grow"
+          class="slds-p-left_medium"
+        ></lightning-layout-item>
+        <lightning-layout-item>
+          <lightning-button
+            label="Next"
+            icon-name="utility:chevronright"
+            data-type="next"
+            icon-position="right"
+            onclick={nextHandler}
+            disabled={disableNext}
+          ></lightning-button>
+        </lightning-layout-item>
+      </div>
+    </lightning-layout>
+  </lightning-card>
+</template>

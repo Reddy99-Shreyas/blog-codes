@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Parent Component">
+        <p class="slds-p-horizontal_small">
+            <!-- Child Component Instance 1 -->
+            <c-related-list 
+                object-api-name="Contact"
+                parent-record-id = {recordId}
+            ></c-related-list>
+            <!-- Child Component Instance 2 -->
+            <c-related-list 
+                object-api-name="Opportunity"
+                parent-record-id = {recordId}
+            ></c-related-list>
+        </p>
+    </lightning-card>
+</template>

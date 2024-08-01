@@ -1,0 +1,15 @@
+<template>
+	<lightning-card title="Debouncing">
+		<lightning-input value={searchTerm} label="Search Account Name" onchange={searchNameHandler}>
+		</lightning-input>
+        <div>
+            <template if:true={display}></template>
+            <template for:each={result} for:item="data">
+                <div class="slds-box slds-box__xx-small" key={data.Id}>
+                    <p>{data.Name} - {data.Id}</p>
+                    <p>{data.Type} - {data.Phone}</p>
+                </div>
+            </template>
+        </div>
+	</lightning-card>
+</template>
