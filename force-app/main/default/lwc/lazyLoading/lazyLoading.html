@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Lazy Loading">
+    <div style="height: 250px">
+      <lightning-datatable
+        key-field="id"
+        data={accountList}
+        columns={columns}
+        enable-infinite-loading={isInfinateLoadingEnabled}
+        onloadmore={loadMoreData}
+        hide-checkbox-column="true"
+        show-row-number-column="true"
+      ></lightning-datatable>
+    </div>
+  </lightning-card>
+</template>
